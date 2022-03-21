@@ -1,0 +1,30 @@
+{% extends 'index.html' %}
+{% block title %}Edit Data{% endblock %}
+{% block content %}
+<div class="row container-fluid">
+    <div class="col-md-6">
+      <form class="container-fluid" action="/update/{{id}}">
+        <div class="form-group"style="margin-top: 1rem;margin-bottom: 1rem;">
+          <label for="title"><h6>Todo Title</h6></label>
+          <input type="text" class="form-control" id="title" placeholder="Title" name="title" value={{title}}>
+        </div>
+        <div class="form-group">
+          <label for="description"><h6>Todo Description</h6></label>
+          <textarea class="form-control" id="description" name="description" placeholder="Description" rows="3">{{description}}</textarea>
+        </div>
+        <div class="form-group">
+          <label for="priority"><h6>Todo Priority</h6></label>
+          <input type="number" class="form-control" id="priority" placeholder="Set Priority" name="priority" value={{priority}}>
+        </div>
+        <div>
+          <label for="is_status"><h6>Status<h6></label>
+          <select class="form-control form-control-sm" id="is_status" name="is_Status">
+            <option>complete</option>
+            <option>upcomming</option>
+          </select>
+        </div> 
+        <button type="submit" class="btn btn-primary">Update</button>
+      </form>
+      </div>
+      </div>
+{% endblock %}
